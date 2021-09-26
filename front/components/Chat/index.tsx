@@ -13,7 +13,7 @@ import { Link, useParams } from 'react-router-dom';
 interface Props {
     data: (IDM | IChat);
 }
-const BACK_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:3095' : 'https://sleact.nodebird.com';
+const BACK_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://minsucode.com';
 const Chat: VFC<Props> = ({ data }) => {
     const { workspace } = useParams<{workspace: string}>();
     // Sender 에 DM 이 있으면 DM 이 없으면 Chat 

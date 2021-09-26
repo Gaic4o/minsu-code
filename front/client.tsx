@@ -1,7 +1,17 @@
+import axios from 'axios';
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './layouts/App/App';
 
-render(<BrowserRouter><App /></BrowserRouter>, document.querySelector('#app'));
+
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL =
+  process.env.NODE_ENV === 'production' ? 'https://minsucode.com' : 'http://localhost:3000';
+  console.log('env', process.env.NODE_ENV === 'production');
+render(
+<BrowserRouter>
+<App />
+</BrowserRouter>, 
+document.querySelector('#app'));
