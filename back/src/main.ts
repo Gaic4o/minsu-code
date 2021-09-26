@@ -15,7 +15,7 @@ declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalFilters(new HttpExceptionFilter());
-  app.listen(8080);
+
 
     app.useGlobalPipes(
       new ValidationPipe({
@@ -84,6 +84,9 @@ async function bootstrap() {
  app.use(passport.initialize());
  app.use(passport.session());
 
+
+ const PORT = process.env.PORT || 8080;
+ await app.listen(PORT);
  // nodemon 같은 역할 hotloader 근데 제대로 swagger 만들 떄 동작하지 x 
   if (module.hot) {
     module.hot.accept();
