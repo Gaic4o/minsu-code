@@ -85,7 +85,7 @@ async function bootstrap() {
  app.use(passport.session());
 
 
- const PORT = process.env.PORT || 8080;
+ const PORT = process.env.PORT || 3000;
  await app.listen(PORT);
  // nodemon 같은 역할 hotloader 근데 제대로 swagger 만들 떄 동작하지 x 
   if (module.hot) {
