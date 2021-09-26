@@ -8,7 +8,7 @@ import App from './layouts/App/App';
 
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL =
-  process.env.NODE_ENV === 'production' ? 'https://minsucode.com' : 'http://localhost:3000';
+  process.env.NODE_ENV === 'production' ? 'http://18.116.24.82/' : 'http://localhost:3000';
   console.log('env', process.env.NODE_ENV === 'production');
 render(
 <BrowserRouter>
