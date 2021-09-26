@@ -15,7 +15,8 @@ declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalFilters(new HttpExceptionFilter());
-   app.listen(3000);
+  const PORT = process.env.PORT || 3000;
+  await app.listen(PORT);
 
     app.useGlobalPipes(
       new ValidationPipe({
