@@ -32,7 +32,7 @@ const config: TypeOrmModuleOptions = {
   autoLoadEntities: true,
   charset: 'utf8mb4',
   // true 계속 해주면 있던 DB 싹 다 날라갑니다.
-  synchronize: false,
+  synchronize: true,
   logging: true,
   keepConnectionAlive: true,
 };
